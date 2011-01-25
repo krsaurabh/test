@@ -1,0 +1,50 @@
+ALTER TABLE `jos_artist_details`
+ADD `image_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cc_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cc_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_attribution_text_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_attribution_text_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cclicense_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cclicense_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_upload_date_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_upload_date_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ;
+
+ALTER TABLE `jos_eventlist_events`
+ADD `image_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cc_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cc_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_attribution_text_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_attribution_text_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cclicense_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_cclicense_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_upload_date_low` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+ADD `image_upload_date_high` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL ;
+
+
+upload_image.php,browse_display.php,
+
+
+create folder on 
+    admin/images/artist/ and admin/images/eventlist/events/
+        low_resolution,high_resolution and check permission //done
+
+UPDATE `jos_artist_details`
+SET `image_low`='',`image_high`='',
+`image_cc_low`='',`image_cc_high`='',`image_attribution_text_low`='',
+`image_attribution_text_high`='',`image_cclicense_low`='',`image_cclicense_high`='',`image_upload_date_low`='',
+`image_upload_date_high`='';
+
+UPDATE `jos_eventlist_events`
+SET `image_low`='',`image_high`='',
+`image_cc_low`='',`image_cc_high`='',`image_attribution_text_low`='',
+`image_attribution_text_high`='',`image_cclicense_low`='',`image_cclicense_high`='',`image_upload_date_low`='',
+`image_upload_date_high`='';
+
+mysqldump -uwebuser -p admin jos_eventlist_events > jos_eventlist_events13jan11.sql
+
+SELECT * FROM jos_artist_details where image!='' and id>7644
+
+8048
+7787
